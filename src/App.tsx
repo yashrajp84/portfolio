@@ -4,6 +4,7 @@ import './index.css';
 import './App.css';
 import circularVector from './assets/images/Circular _vector.svg';
 import gsap from 'gsap';
+import Footer from './components/Footer';
 
 const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 const numberChars = "0123456789";
