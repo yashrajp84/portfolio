@@ -1,0 +1,142 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: white;
+}
+
+.hero-nav {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+
+.hero-nav {
+  position: fixed;
+  top: 40px;
+  left: 40px;
+  right: 40px;
+  display: flex;
+  justify-content: space-between;
+  z-index: 50;
+}
+
+.hero-name {
+  font-family: poppins, sans-serif;
+  text-decoration: none;
+  color: white;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.menu-button {
+  font-family: poppins, sans-serif;
+  font-size: 1rem;
+  text-transform: uppercase;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  color: white;
+  transition: opacity 0.3s ease;
+}
+
+.menu-button:hover {
+  opacity: 0.8;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 1920px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.title-button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  text-align: center;
+  margin-top: 25rem;
+
+}
+
+.hero-title {
+  margin-bottom: 1rem;
+}
+
+.main-title {
+  font-family: "Instrument Serif", serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0;
+  text-transform: none;
+  color: white;
+}
+
+.hero-title-highlight {
+  font-weight: 700;
+}
+
+.hero-button {
+  display: inline-block;
+  padding: 0.75rem 2.5rem;
+  border: none;
+  border-radius: 25px;
+  background-color: white;
+  color: #0a3d62;
+  font-size: 1rem;
+  cursor: pointer;
+  font-family: poppins, sans-serif;
+  margin: 0;
+  width: auto;
+}
+
+.scroll-text, .location-text {
+  position: fixed;
+  bottom: 40px;
+  font-family: 'Breston', serif;
+  font-size: 0.875rem;
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.scroll-text {
+  font-family: poppins, sans-serif; 
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.mute-button {
+  position: fixed;
+  bottom: 40px;
+  left: 40px;
+  background: transparent;
+  border: 1px solid white;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  font-size: 1rem;
+  opacity: 0.8;
+  font-family: poppins, sans-serif;
+}
+
+.location-text {
+  font-family: poppins, sans-serif;
+  right: 40px;
+}

@@ -1,0 +1,68 @@
+.journey-section {
+  padding: 18rem 0;
+  text-align: center;
+}
+
+.journey-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.journey-heading {
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.journey-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.journey-box {
+  position: relative;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.journey-background {
+  width: 100%;
+  height: auto;
+  animation: rotate 20s linear infinite; /* Apply rotation animation */
+}
+
+.journey-text-group {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+}
+
+.journey-year {
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+  font-size: 1rem;
+}
+.journey-role {
+    font-family: "Instrument Serif", serif;
+    font-weight: 400;
+  font-size: 2rem;
+}
+.journey-company {
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+    font-style: italic;
+    transform: uppercase;
+  font-size: 1rem;
+  margin: 0.5rem 0;
+}

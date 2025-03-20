@@ -1,0 +1,27 @@
+.about-section {
+  padding: 2rem;
+  text-align: center;
+}
+
+.about-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-heading {
+    font-family: poppins, sans-serif;
+    font-weight: 400;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.about-text {
+  font-family: "Instrument Serif", serif;
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.italic {
+  font-style: italic;
+}
