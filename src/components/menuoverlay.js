@@ -1,5 +1,6 @@
 import React from 'react';
 import './menuoverlay.css';
+import ScrambleButton from './ScrambleButton';
 
 function MenuOverlay({ isOpen, onClose }) {
   React.useEffect(() => {
@@ -15,9 +16,7 @@ function MenuOverlay({ isOpen, onClose }) {
 
   return (
     <div className={`menu-overlay ${isOpen ? 'open' : ''}`}>
-      <button className="close-button" onClick={onClose}>
-        <span>×</span>
-      </button>
+      <ScrambleButton text="×" className="close-button" onClick={onClose} />
       <nav className="menu-content">
         <a href="#about" onClick={onClose}>About me</a>
         <a href="#work" onClick={onClose}>Work</a>
@@ -25,9 +24,9 @@ function MenuOverlay({ isOpen, onClose }) {
         <a href="/resume.pdf" download onClick={onClose}>Download resume</a>
       </nav>
       <div className="social-links">
-        <a href="https://dribbble.com" target="_blank" rel="noopener noreferrer">Dribbble</a>
-        <a href="mailto:your.email@example.com">Email</a>
-        <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://dribbble.com/yashrajp84" target="_blank" rel="noopener noreferrer">Dribbble</a>
+        <a href="mailto:yashrajp84@gmail.com">Email</a>
+        <a href="https://www.linkedin.com/in/yashraj-patil-302a77108/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
       </div>
     </div>
   );

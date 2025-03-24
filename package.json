@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@fontsource/instrument-serif": "^5.2.5",
+    "@react-three/drei": "^10.0.4",
+    "@react-three/fiber": "^9.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
@@ -12,11 +14,14 @@
     "gsap": "^3.12.7",
     "gsap-trial": "^3.12.7",
     "jquery": "^3.7.1",
+    "locomotive-scroll": "^4.1.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.4.0",
     "react-scripts": "5.0.1",
     "scrollmagic": "^2.0.8",
     "styled-components": "^6.1.16",
+    "three": "^0.174.0",
     "use-scramble": "^2.2.15",
     "web-vitals": "^2.1.4"
   },

@@ -1,0 +1,50 @@
+.footer {
+  width: 100%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem 2rem;
+}
+
+.footer p {
+  font-family: 'Instrument Serif', serif;
+  font-size: 2rem;
+  color:#0A446E;
+  text-align: center;
+  max-width: 800px;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.footer .hero-button {
+  margin-top: 2rem;
+  font-family: 'poppins', sans-serif;
+  font-size: 1rem;
+  color: #0A446E;
+  background: transparent;
+  border: 1px solid #0A446E;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+}
+
+.footer .hero-button:hover {
+  background-color: #0A446E;
+  color: white;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .footer p {
+    font-size: 2rem;
+  }
+  
+  .footer button {
+    font-size: 0.9rem;
+    padding: 0.8rem 1.6rem;
+  }
+}

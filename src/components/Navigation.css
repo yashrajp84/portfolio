@@ -1,0 +1,41 @@
+.main-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 40px 0px 0px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 97vw;
+  max-width: 1920px;
+  z-index: 100;
+}
+
+.nav-logo {
+  font-family: 'poppins', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+}
+
+.menu-button {
+  background: transparent;
+  color: white;
+  padding: 8px 16px;
+  font-family: 'poppins', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+
+@media (max-width: 768px) {
+  .main-nav {
+  }
+  
+  .nav-logo {
+    font-size: 1rem;
+  }
+}

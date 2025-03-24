@@ -1,0 +1,9 @@
+.scramble-button {
+  white-space: nowrap;
+  overflow: hidden;
+  text-align: center;
+}
+
+.scramble-button span {
+  display: inline-block;
+}
