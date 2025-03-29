@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import projects from '../data/projects';
 import './ProjectDetail.css';
 import ScrambleButton from './ScrambleButton';
+import Footer from './Footer';
 
 function ProjectDetail() {
   const { projectId } = useParams();
@@ -51,12 +52,16 @@ function ProjectDetail() {
   }
 
   return (
-    <div className="project-detail">
+    <div 
+      className="project-detail"
+      style={{
+        background: project.backgroundGradient || 'var(--background-color)'
+      }}>
       <div className="project-header">
         <div 
           className="project-hero" 
           style={{
-            backgroundImage: `url(${project.image})`,
+            backgroundImage: `url(${project.heroImage || project.image})`,
             transform: `translateY(${scrollPosition * 0.2}px)`
           }}
         >
@@ -170,6 +175,7 @@ function ProjectDetail() {
           </Link>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

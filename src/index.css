@@ -3,7 +3,7 @@
 }
 
 body {
-  background: linear-gradient(to bottom, #013E6A, #FFEBE0); /* Apply background to entire page */
+  background: linear-gradient(to bottom, #013E6A, #D0D5CE); /* Apply background to entire page */
   color: white;
   margin: 0;
   font-family: var(--text-serif);

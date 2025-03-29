@@ -7,14 +7,32 @@
   align-items: center;
   gap: 2rem;
   padding: 4rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 850px;
+  height: 800px;
+  background-image: url('./footer-bg.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1;
+  opacity: 0.8;
 }
 
 .footer p {
   font-family: 'Instrument Serif', serif;
-  font-size: 2rem;
-  color:#0A446E;
+  font-size: 4rem;
+  color: #ffffff;
   text-align: center;
   max-width: 800px;
+  text-transform: uppercase;
   line-height: 1.2;
   margin: 0;
 }
@@ -23,9 +41,9 @@
   margin-top: 2rem;
   font-family: 'poppins', sans-serif;
   font-size: 1rem;
-  color: #0A446E;
+  color: white;
   background: transparent;
-  border: 1px solid #0A446E;
+  border: 1px solid white;
   padding: 1rem 2rem;
   cursor: pointer;
   text-transform: uppercase;
@@ -38,7 +56,22 @@
   transform: translateY(-2px);
 }
 
-@media (max-width: 768px) {
+.icon-buttons {
+  display: flex;
+  gap: 1rem;
+}
+
+.icon-buttons a {
+  color: white;
+  font-size: 2rem;
+  transition: color 0.3s;
+}
+
+.icon-buttons a:hover {
+  color: #0A446E;
+}
+
+@media (max-width: 800px) {
   .footer p {
     font-size: 2rem;
   }
