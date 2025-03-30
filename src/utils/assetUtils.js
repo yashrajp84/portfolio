@@ -4,8 +4,17 @@ import { supabase } from './supabase';
 export const getAssetUrl = async (assetPath) => {
   try {
     // Special case for Circular_vector asset
-    if (assetPath === 'Circular_vector.svg' || assetPath === 'Circular_vector.png') {
-      return 'https://ynmpuwsryqdnjxhesexm.supabase.co/storage/v1/object/sign/brand-assets/Circular_vector.png?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1cmwiOiJicmFuZC1hc3NldHMvQ2lyY3VsYXJfdmVjdG9yLnBuZyIsImlhdCI6MTc0MzMzNDYzMCwiZXhwIjoxNzQzOTM5NDMwfQ.IZpYuey9XEi5Pu-poH3QUq7Be3_ldhVbJhzKNOSMw7M';
+    if (assetPath === 'Circular_vector.png') {
+      const { data: { publicUrl }, error } = supabase
+        .storage
+        .from('brand-assets')
+        .getPublicUrl('Circular_vector.png');
+      
+      if (error) {
+        console.error('Error getting Circular_vector URL:', error.message);
+        return null;
+      }
+      return publicUrl;
     }
     
     const { data: { publicUrl }, error } = supabase

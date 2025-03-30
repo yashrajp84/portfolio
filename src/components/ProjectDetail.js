@@ -1,14 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import './ProjectDetail.css';
-import { fetchProjectById, fetchProjects } from '../utils/supabase';
+import { fetchProjectById } from '../utils/supabase';
 import ScrambleButton from './ScrambleButton';
 import Footer from './Footer';
 
 function ProjectDetail() {
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
-  const [projects, setProjects] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
