@@ -56,7 +56,7 @@ function DesignJourney() {
         <h3 className="journey-heading">MY DESIGN JOURNEY</h3>
         <div className="journey-item">
           <div className="journey-box">
-            <img src={getAssetUrl('Circular_vector.svg')} alt="Journey background" className="journey-background" />
+            <img src={getAssetUrl('Circular_vector.png')} alt="Journey background" className="journey-background" />
             <div className="journey-text-group">
               <div className="journey-year" ref={yearRef.ref}>{journeyData[currentIndex].year}</div>
               <div className="journey-role" ref={roleRef.ref}>{journeyData[currentIndex].role}</div>
