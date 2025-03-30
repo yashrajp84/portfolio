@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './designjourney.css';
 import { getAssetUrl } from '../utils/assetUtils';
-import { useEffect, useState } from 'react';
 import { useScramble } from 'use-scramble';
 
 const journeyData = [
