@@ -5,11 +5,11 @@ import Papa from 'papaparse';
 const ASSET_BUCKET = 'assets';
 
 // Initialize Supabase client with database configuration
-const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseUrl = 'https://ynmpuwsryqdnjxhesexm.supabase.co';
 const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
 
-if (!supabaseUrl || !supabaseKey) {
-  throw new Error('Missing Supabase credentials. Please check your environment variables.');
+if (!supabaseKey) {
+  throw new Error('Missing Supabase key. Please check your environment variables.');
 }
 
 // Create Supabase client with additional database options

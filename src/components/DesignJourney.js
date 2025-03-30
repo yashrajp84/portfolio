@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './designjourney.css';
-import circularVector from '../Circular_vector.svg';
+import { getAssetUrl } from '../utils/assetUtils';
+import { useEffect, useState } from 'react';
 import { useScramble } from 'use-scramble';
 
 const journeyData = [
@@ -56,7 +57,7 @@ function DesignJourney() {
         <h3 className="journey-heading">MY DESIGN JOURNEY</h3>
         <div className="journey-item">
           <div className="journey-box">
-            <img src={circularVector} alt="Journey background" className="journey-background" />
+            <img src={getAssetUrl('Circular_vector.svg')} alt="Journey background" className="journey-background" />
             <div className="journey-text-group">
               <div className="journey-year" ref={yearRef.ref}>{journeyData[currentIndex].year}</div>
               <div className="journey-role" ref={roleRef.ref}>{journeyData[currentIndex].role}</div>
