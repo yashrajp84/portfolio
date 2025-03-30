@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './designjourney.css'; // Import the CSS file for styling
-import circularVector from '/src/Circular_vector.svg'; // Update with the correct path to your image
+import CircularVector from './Circular_vector.png'; // Update with the correct path to your image
 import { useScramble } from 'use-scramble'; // Import useScramble hook
 
 const journeyData = [
