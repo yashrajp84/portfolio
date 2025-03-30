@@ -163,9 +163,11 @@ export const fetchAssets = async (folderPath = '') => {
 // Function to fetch a single asset by path
 export const fetchAssetByPath = async (filePath) => {
   try {
+    // Use 'brand-assets' bucket for Circular_vector files
+    const bucket = filePath.includes('Circular_vector.png') ? 'brand-assets' : ASSET_BUCKET;
     const { data: { publicUrl }, error } = supabase
       .storage
-      .from(ASSET_BUCKET)
+      .from(bucket)
       .getPublicUrl(filePath);
 
     if (error) throw error;
