@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import projects from '../data/projects';
 import './ProjectDetail.css';
+import { fetchProjectById } from '../utils/supabase';
 import ScrambleButton from './ScrambleButton';
 import Footer from './Footer';
 
@@ -9,21 +9,28 @@ function ProjectDetail() {
   const { projectId } = useParams();
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const [scrollPosition, setScrollPosition] = useState(0);
 
   useEffect(() => {
-    // Find the project by ID
-    const foundProject = projects.find(p => p.id === parseInt(projectId));
-    if (foundProject) {
-      setProject(foundProject);
-      // Simulate loading data from a CMS
-      setTimeout(() => {
+    const loadProject = async () => {
+      try {
+        const projectData = await fetchProjectById(parseInt(projectId));
+        if (!projectData) {
+          setError('Project not found');
+        } else {
+          setProject(projectData);
+        }
+      } catch (err) {
+        setError('Error loading project');
+        console.error('Error:', err);
+      } finally {
         setLoading(false);
-      }, 500);
-      
-      // Scroll to top when component mounts
-      window.scrollTo(0, 0);
-    }
+      }
+    };
+
+    loadProject();
+    window.scrollTo(0, 0);
 
     // Track scroll position for animations
     const handleScroll = () => {
@@ -39,6 +46,12 @@ function ProjectDetail() {
       <div className="project-detail-loading">
         <div className="loader"></div>
       </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="error">{error}</div>
     );
   }
 
