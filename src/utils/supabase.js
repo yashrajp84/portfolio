@@ -1,6 +1,9 @@
 import { createClient } from '@supabase/supabase-js';
 import Papa from 'papaparse';
 
+// Asset bucket name in Supabase storage
+const ASSET_BUCKET = 'assets';
+
 // Initialize Supabase client with database configuration
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey = process.env.REACT_APP_SUPABASE_ANON_KEY;
@@ -124,6 +127,56 @@ const validateProjectData = (data) => {
 };
 
 // Function to import CSV data to Supabase
+// Function to fetch assets from Supabase storage
+export const fetchAssets = async (folderPath = '') => {
+  try {
+    const { data, error } = await supabase
+      .storage
+      .from(ASSET_BUCKET)
+      .list(folderPath);
+
+    if (error) throw error;
+
+    // Transform the data to include public URLs
+    const assetsWithUrls = await Promise.all(data.map(async (file) => {
+      const { data: { publicUrl } } = supabase
+        .storage
+        .from(ASSET_BUCKET)
+        .getPublicUrl(`${folderPath}/${file.name}`);
+
+      return {
+        name: file.name,
+        size: file.metadata?.size,
+        type: file.metadata?.mimetype,
+        url: publicUrl,
+        created_at: file.created_at
+      };
+    }));
+
+    return assetsWithUrls;
+  } catch (error) {
+    console.error('Error fetching assets:', error.message);
+    return [];
+  }
+};
+
+// Function to fetch a single asset by path
+export const fetchAssetByPath = async (filePath) => {
+  try {
+    const { data: { publicUrl }, error } = supabase
+      .storage
+      .from(ASSET_BUCKET)
+      .getPublicUrl(filePath);
+
+    if (error) throw error;
+
+    return publicUrl;
+  } catch (error) {
+    console.error(`Error fetching asset ${filePath}:`, error.message);
+    return null;
+  }
+};
+
 export const importProjectsFromCSV = async (file) => {
   try {
     // Parse CSV file
