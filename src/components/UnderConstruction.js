@@ -1,6 +1,6 @@
 import React from 'react';
 import './underconstruction.css';
-import CircularVector from '../Circular_vector.svg';
+import { getAssetUrl } from '../utils/assetUtils';
 
 const UnderConstruction = () => {
   return (
