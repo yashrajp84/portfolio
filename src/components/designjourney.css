@@ -1,5 +1,5 @@
 .journey-section {
-  padding: 18rem 0;
+  padding: 12rem 0;
   text-align: center;
 }
 
@@ -38,6 +38,7 @@
 .journey-background {
   width: 100%;
   height: auto;
+  mix-blend-mode: multiply;
   animation: rotate 20s linear infinite; /* Apply rotation animation */
 }
 
@@ -46,7 +47,6 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white;
 }
 
 .journey-year {

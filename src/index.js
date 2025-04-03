@@ -1,7 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client'; // Ensure correct import for React 18
-import './index.css'; // Ensure this file exists
-import App from './App'; // Ensure this file exists
+import ReactDOM from 'react-dom/client';
+import './index.css';
+import App from './App';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -9,3 +9,4 @@ root.render(
     <App />
   </React.StrictMode>
 );
+

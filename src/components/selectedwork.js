@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './selectedwork.css';
-import { fetchProjects } from '../utils/supabase';
+import projects from '../data/projects';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import CardShader from './CardShader';
@@ -15,31 +15,12 @@ function SelectedWork() {
   const sectionRef = useRef(null);
   const lastScrollY = useRef(0);
   const [scrollSpeed, setScrollSpeed] = useState(0);
-  const [projects, setProjects] = useState([]);
-  const [loading, setLoading] = useState(true);
 
   const handleProjectClick = (projectId) => {
     navigate(`/project/${projectId}`);
   };
 
   useEffect(() => {
-    const loadProjects = async () => {
-      try {
-        const projectsData = await fetchProjects();
-        setProjects(projectsData);
-      } catch (error) {
-        console.error('Error loading projects:', error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadProjects();
-  }, []);
-
-  useEffect(() => {
-    if (!containerRef.current || loading) return;
-
     const container = containerRef.current;
     const section = sectionRef.current;
     let lastTime = performance.now();
@@ -87,14 +68,18 @@ function SelectedWork() {
 
   return (
     <div className="main-container">
+
       {/* Selected Work Section */}
       <section ref={sectionRef} className="section selected-work-section">
-        <div className="scroll-wrapper">
-          <div ref={containerRef} className="extra-long-container">
+        <div
+          className="scroll-wrapper">
+          <div
+            ref={containerRef}
+            className="extra-long-container"
+
+          >
             <div className="selected-work">Selected Work</div>
-            {loading ? (
-              <div className="loading">Loading projects...</div>
-            ) : projects.map((project) => (
+            {projects.map((project) => (
               <div key={project.id} className="card" onClick={() => handleProjectClick(project.id)}>
                 <div className="card-image">
                   <CardShader

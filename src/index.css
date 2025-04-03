@@ -1,12 +1,43 @@
 :root {
   --text-serif: 'Instrument Serif', Times, serif;
+  
+  /* Dark theme variables */
+  --dark-bg-gradient-start: #000102;
+  --dark-bg-gradient-end: #222222;
+  --dark-text: #ffffff;
+  --dark-link: #ffffff;
+  
+  /* Light theme variables */
+  --light-bg-gradient-start: #ffffff;
+  --light-bg-gradient-end: #ffffff;
+  --light-text: #222222;
+  --light-link: #222222;
 }
 
 body {
-  background: linear-gradient(to bottom, #013E6A, #D0D5CE); /* Apply background to entire page */
-  color: white;
   margin: 0;
   font-family: var(--text-serif);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+body[data-theme="dark"] {
+  background: linear-gradient(to bottom, var(--dark-bg-gradient-start), var(--dark-bg-gradient-end));
+  color: var(--dark-text);
+}
+
+body[data-theme="light"] {
+  background: linear-gradient(to bottom, var(--light-bg-gradient-start), var(--light-bg-gradient-end));
+  color: var(--light-text);
+}
+
+a {
+  color: var(--light-link);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+body[data-theme="dark"] a {
+  color: var(--dark-link);
 }
 
 code {
@@ -18,4 +49,38 @@ html, body {
   overflow-x: hidden;
   width: 100%;
   position: relative;
+}
+
+.container {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--light-bg-gradient-start);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0px;
+  padding: 0px;
+  z-index: -200;
+}
+
+body[data-theme="dark"] .container {
+  background-color: var(--dark-bg-gradient-start);
+}
+
+.box {
+  width: 25vw;
+  height: 100vh;
+  background-color: var(--dark-bg-gradient-start);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  border-right: 0.1px solid;
+  border-color: var(--dark-bg-gradient-end);
+}
+
+body[data-theme="light"] .box {
+  background-color: var(--light-bg-gradient-end);
+  border-color: var(--light-bg-gradient-start);
 }

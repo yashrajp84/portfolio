@@ -1,54 +1,55 @@
-import React, { useRef, useState, useEffect } from 'react';
-import './designjourney.css';
-import { getAssetUrl } from '../utils/assetUtils';
+import React, { useState, useEffect } from 'react';
 import { useScramble } from 'use-scramble';
-
-const journeyData = [
-  {
-    year: "2021",
-    role: "Web Designer",
-    company: "KRAFTYSOCIO"
-  },
-  {
-    year: "2022",
-    role: "UI/UX Designer",
-    company: "ARINTRA"
-  },
-  {
-    year: "2023",
-    role: "Product Designer",
-    company: "MDIT, RMIT"
-  }
-];
+import './DesignJourney.css';
 
 function DesignJourney() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const journeyGroups = [
+    { year: '2022', role: 'Web Designer', company: 'KraftySocio' },
+    { year: '2023', role: 'UI/UX Designer', company: 'Arintra' },
+    { year: '2024', role: 'Web Designer', company: 'SSI' },
+    { year: '2025', role: 'Engagement Assistant', company: 'NRCH' }
+  ];
 
-  const yearRef = useScramble({
-    text: journeyData[currentIndex].year,
-    speed: 0.8,
-    step: 1,
+  const [currentGroupIndex, setCurrentGroupIndex] = useState(0);
+  const currentGroup = journeyGroups[currentGroupIndex];
+
+  const yearScramble = useScramble({
+    text: currentGroup.year,
+    speed: 0.4,
+    step: 0.5,
+    scramble: 3,
+    seed: 1,
   });
 
-  const roleRef = useScramble({
-    text: journeyData[currentIndex].role,
-    speed: 0.7,
-    step: 1,
+  const roleScramble = useScramble({
+    text: currentGroup.role,
+    speed: 0.4,
+    step: 0.5,
+    scramble: 3,
+    seed: 1,
   });
 
-  const companyRef = useScramble({
-    text: journeyData[currentIndex].company,
-    speed: 0.6,
-    step: 1,
+  const companyScramble = useScramble({
+    text: currentGroup.company,
+    speed: 0.4,
+    step: 0.5,
+    scramble: 3,
+    seed: 1,
   });
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % journeyData.length);
-    }, 4000);
+      setCurrentGroupIndex((prevIndex) => (prevIndex + 1) % journeyGroups.length);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    yearScramble.replay();
+    roleScramble.replay();
+    companyScramble.replay();
+  }, [currentGroup]);
 
   return (
     <section className="journey-section">
@@ -56,11 +57,15 @@ function DesignJourney() {
         <h3 className="journey-heading">MY DESIGN JOURNEY</h3>
         <div className="journey-item">
           <div className="journey-box">
-            <img src={getAssetUrl('Circular_vector.png')} alt="Journey background" className="journey-background" />
+            <img
+              src="https://ynmpuwsryqdnjxhesexm.supabase.co/storage/v1/object/public/brand-assets//Group%2083.png"
+              alt="Journey background"
+              className="journey-background"
+            />
             <div className="journey-text-group">
-              <div className="journey-year" ref={yearRef.ref}>{journeyData[currentIndex].year}</div>
-              <div className="journey-role" ref={roleRef.ref}>{journeyData[currentIndex].role}</div>
-              <div className="journey-company" ref={companyRef.ref}>{journeyData[currentIndex].company}</div>
+              <div className="journey-year" ref={yearScramble.ref}>{currentGroup.year}</div>
+              <div className="journey-role" ref={roleScramble.ref}>{currentGroup.role}</div>
+              <div className="journey-company" ref={companyScramble.ref}>{currentGroup.company}</div>
             </div>
           </div>
         </div>

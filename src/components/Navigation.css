@@ -15,7 +15,6 @@
   font-family: 'poppins', sans-serif;
   font-size: 1rem;
   font-weight: 500;
-  color: white;
   text-decoration: none;
 }
 
@@ -33,9 +32,15 @@
 
 @media (max-width: 768px) {
   .main-nav {
+    margin: 20px;
+    width: 90vw;
+  }
   }
   
   .nav-logo {
     font-size: 1rem;
   }
-}
+  .menu-button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }

@@ -2,9 +2,9 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: 35%;
+  width: 40%;
   height: 100vh;
-  background-color: #ffffff;
+  backdrop-filter: blur(16px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -27,8 +27,8 @@ body.menu-open {
   top: 24px;
   right: 40px;
   background: none;
+  mix-blend-mode: difference;
   border: none;
-  color: #023F6B;
   font-size: 2rem;
   cursor: pointer;
   padding: 0;
@@ -57,10 +57,9 @@ body.menu-open {
 
 .menu-content a {
   font-family: "Instrument Serif", serif;
-  color: #023F6B;
   text-decoration: none;
   font-size: 3rem;
-  font-weight: 300;
+  font-weight: 400;
   transition: all 0.3s ease;
   line-height: 1.2;
   letter-spacing: -0.02em;
@@ -85,17 +84,17 @@ body.menu-open {
 }
 
 .social-links {
-    display: flex;
+  width: 80%;
+justify-content: space-between;
     flex-direction: row;
   position: absolute;
   bottom: 40px;
   right: 40px;
-  gap: 12rem;
   text-align: center;
 }
 
 .social-links a {
-  color: #023F6B;
+  display: flex;
   text-transform: uppercase;
   font-size: 1rem;
   font-weight: 300;

@@ -1,0 +1,23 @@
+.scroll-reveal {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  will-change: transform;
+}
+
+.scroll-reveal-text {
+  margin: 0;
+  padding: 0;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.word {
+  display: inline-block;
+  will-change: opacity, filter;
+  margin-right: 0.25em;
+}
+
+.word:last-child {
+  margin-right: 0;
+}

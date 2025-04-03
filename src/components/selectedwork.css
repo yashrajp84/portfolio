@@ -43,7 +43,9 @@
 }
 
 .selected-work {
-  font-family: 'Instrument Serif', serif;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 48px;
   color: #FFFFFF;
   margin-left: 37vw;
@@ -79,7 +81,9 @@
 }
 
 .project-name {
-  font-family: 'Instrument Serif', serif;
+  font-family: "Instrument Serif", serif;
+  font-weight: 400;
+  font-style: normal;
   font-size: 32px;
   color: #FFFFFF;
   margin: 0;
