@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Hero from './components/hero';
 import AboutMe from './components/AboutMe';
-import DesignJourney from './components/designjourney';
+import DesignJourney from './components/DesignJourney';
 import SelectedWork from './components/selectedwork.js';
 import Footer from './components/Footer';
 import ProjectDetail from './components/ProjectDetail';
