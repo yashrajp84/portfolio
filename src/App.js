@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Hero from './components/hero';
-import AboutMe from './components/AboutMe';
-import DesignJourney from './components/DesignJourney';
-import SelectedWork from './components/selectedwork.js';
-import Footer from './components/Footer';
-import ProjectDetail from './components/ProjectDetail';
-import Navigation from './components/Navigation';
-import LoadingScreen from './components/LoadingScreen';
-import Cursor from './components/Cursor';
+import Hero from './components/Hero'; // Ensure correct case
+import AboutMe from './components/AboutMe'; // Ensure correct case
+import DesignJourney from './components/DesignJourney'; // Ensure correct case
+import SelectedWork from './components/SelectedWork'; // Ensure correct case
+import Footer from './components/Footer'; // Ensure correct case
+import ProjectDetail from './components/ProjectDetail'; // Ensure correct case
+import Navigation from './components/Navigation'; // Ensure correct case
+import LoadingScreen from './components/LoadingScreen'; // Ensure correct case
+import Cursor from './components/Cursor'; // Ensure correct case
 
 import { ThemeProvider, useTheme } from './context/ThemeContext';
 
