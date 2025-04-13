@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './hero.css';
+import './Hero.css';
 import MenuOverlay from './Menuoverlay';
 import { useScramble } from 'use-scramble';
 import ScrambleButton from './ScrambleButton';

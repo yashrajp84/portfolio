@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './footer.css';
+import './Footer.css';
 import ScrambleButton from './ScrambleButton';
 import { FaLinkedin, FaEnvelope, FaDribbble } from 'react-icons/fa';
 

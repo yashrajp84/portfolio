@@ -1,5 +1,5 @@
 import React from 'react';
-import './menuoverlay.css';
+import './Menuoverlay.css';
 import ScrambleButton from './ScrambleButton';
 
 function MenuOverlay({ isOpen, onClose }) {

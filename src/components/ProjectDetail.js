@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import projects from '../data/projects';
 import './ProjectDetail.css';
 import ScrambleButton from './ScrambleButton';
 import Footer from './Footer';
+import { supabase } from '../utils/supabase';
 
 function ProjectDetail() {
   const { projectId } = useParams();
@@ -11,21 +11,47 @@ function ProjectDetail() {
   const [loading, setLoading] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
   // Make projects available throughout the component
-  const [projectsList] = useState(projects);
+  const [projectsList, setProjectsList] = useState([]);
 
   useEffect(() => {
-    // Find the project by ID
-    const foundProject = projects.find(p => p.id === parseInt(projectId));
-    if (foundProject) {
-      setProject(foundProject);
-      // Simulate loading data from a CMS
-      setTimeout(() => {
-        setLoading(false);
-      }, 500);
+    // Fetch all projects for the "More Projects" section
+    const fetchAllProjects = async () => {
+      const { data: allProjects, error: projectsError } = await supabase
+        .from('projects')
+        .select('*');
       
-      // Scroll to top when component mounts
-      window.scrollTo(0, 0);
-    }
+      if (projectsError) {
+        console.error('Error fetching projects:', projectsError);
+        return;
+      }
+      
+      setProjectsList(allProjects || []);
+    };
+
+    // Fetch single project by ID
+    const fetchProject = async () => {
+      const { data: projectData, error: projectError } = await supabase
+        .from('projects')
+        .select('*')
+        .eq('id', parseInt(projectId))
+        .single();
+
+      if (projectError) {
+        console.error('Error fetching project:', projectError);
+        setLoading(false);
+        return;
+      }
+
+      if (projectData) {
+        setProject(projectData);
+        setLoading(false);
+        // Scroll to top when project data is loaded
+        window.scrollTo(0, 0);
+      }
+    };
+
+    fetchProject();
+    fetchAllProjects();
 
     // Track scroll position for animations
     const handleScroll = () => {
