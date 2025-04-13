@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { projects } from '../data/projects';
+import projects from '../data/projects';
 import './ProjectDetail.css';
 import ScrambleButton from './ScrambleButton';
 import Footer from './Footer';

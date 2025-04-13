@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Hero from './components/Hero'; // Ensure correct case
 import AboutMe from './components/AboutMe'; // Ensure correct case
 import DesignJourney from './components/DesignJourney'; // Ensure correct case
-import SelectedWork from './components/SelectedWork'; // Ensure correct case
+import SelectedWork from './components/selectedwork'; // Ensure correct case
 import Footer from './components/Footer'; // Ensure correct case
 import ProjectDetail from './components/ProjectDetail'; // Ensure correct case
 import Navigation from './components/Navigation'; // Ensure correct case
