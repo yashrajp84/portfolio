@@ -136,13 +136,10 @@ function ProjectDetail() {
       if (projectError) {
         console.error('Error fetching project:', projectError);
         setLoading(false);
-      }, 500);
-
-      // Scroll to top when component mounts
-      window.scrollTo(0, 0);
-    }
         return;
       }
+
+    
 
       if (projectData) {
         setProject(projectData);
@@ -150,7 +147,8 @@ function ProjectDetail() {
         // Scroll to top when project data is loaded
         window.scrollTo(0, 0);
       }
-    };
+    }; // End of fetchProject function
+
 
     fetchProject();
     fetchAllProjects();
@@ -162,7 +160,8 @@ function ProjectDetail() {
 
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [projectId]);
+  }, [projectId]); // End of useEffect
+
 
   if (loading) {
     return (
@@ -308,6 +307,6 @@ function ProjectDetail() {
       <Footer />
     </div>
   );
-}
+} // End of ProjectDetail component
 
 export default ProjectDetail;
