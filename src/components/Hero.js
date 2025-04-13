@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Hero.css';
-import MenuOverlay from './Menuoverlay';
+import Menuoverlay     from './Menuoverlay';
 import { useScramble } from 'use-scramble';
 import ScrambleButton from './ScrambleButton';
 import { useTheme } from '../context/ThemeContext';
@@ -29,7 +29,7 @@ function Hero() {
           <div className="hero-title">
             <h1 className="main-title">
               <div>Creative Digital Designer</div>
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}> 
+              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center' }}>
                 <div className="who-just-loves">WHO JUST <br></br> LOVES</div>
                 <div className="blank-box"></div>
                 <div style={{ fontStyle: 'italic' }}>Crafting Impactful</div>
@@ -42,8 +42,8 @@ function Hero() {
         <div className="location-text">MELBOURNE, AU</div>
         <div className="scroll-text">SCROLL DOWN TO KNOW MORE</div>
         <div className="theme-toggle-button">
-          <Simple 
-            duration={750} 
+          <Simple
+            duration={750}
             toggled={isDarkMode}
             onToggle={toggleTheme}
           />

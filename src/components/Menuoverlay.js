@@ -2,7 +2,7 @@ import React from 'react';
 import './Menuoverlay.css';
 import ScrambleButton from './ScrambleButton';
 
-function MenuOverlay({ isOpen, onClose }) {
+function Menuoverlay({ isOpen, onClose }) {
   React.useEffect(() => {
     if (isOpen) {
       document.body.classList.add('menu-open');
@@ -32,4 +32,4 @@ function MenuOverlay({ isOpen, onClose }) {
   );
 }
 
-export default MenuOverlay;
+export default Menuoverlay;

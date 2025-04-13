@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
-import MenuOverlay from './Menuoverlay';
+import Menuoverlay    from './Menuoverlay';
 import ScrambleButton from './ScrambleButton';
 
 function Navigation() {
@@ -10,7 +10,7 @@ function Navigation() {
   return (
     <nav className="main-nav">
       <Link to="/" className="nav-logo">YASHRAJ PATIL</Link>
-      <MenuOverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
+      <Menuoverlay isOpen={isMenuOpen} onClose={() => setIsMenuOpen(false)} />
       <ScrambleButton text="MENU" className="menu-button" onClick={() => setIsMenuOpen(true)} />
     </nav>
   );
