@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Navigation.css';
-import MenuOverlay from './menuoverlay';
+import MenuOverlay from './Menuoverlay';
 import ScrambleButton from './ScrambleButton';
 
 function Navigation() {

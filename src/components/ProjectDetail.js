@@ -106,6 +106,8 @@ function ProjectDetail() {
   const [project, setProject] = useState(null);
   const [loading, setLoading] = useState(true);
   const [scrollPosition, setScrollPosition] = useState(0);
+  // Make projects available throughout the component
+  const [projectsList] = useState(projects);
 
   useEffect(() => {
     // Find the project by ID
@@ -253,7 +255,7 @@ function ProjectDetail() {
         <div className="project-next">
           <h2>More Projects</h2>
           <div className="next-projects">
-            {projects.filter(p => p.id !== project.id).slice(0, 2).map((nextProject) => (
+            {projectsList.filter(p => p.id !== project.id).slice(0, 2).map((nextProject) => (
               <Link to={`/project/${nextProject.id}`} key={nextProject.id} className="next-project-card">
                 <div className="next-project-image" style={{ backgroundImage: `url(${nextProject.image})` }}></div>
                 <div className="next-project-info">

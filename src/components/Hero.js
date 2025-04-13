@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './hero.css';
-import MenuOverlay from './menuoverlay';
+import MenuOverlay from './Menuoverlay';
 import { useScramble } from 'use-scramble';
 import ScrambleButton from './ScrambleButton';
 import { useTheme } from '../context/ThemeContext';
